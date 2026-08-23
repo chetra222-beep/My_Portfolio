@@ -1,6 +1,6 @@
 
 import { ArrowRight } from 'lucide-react'
-import aboutPhoto from '../assets/images/About.jpg'
+import aboutPhoto from '../assets/images/myprofile.jpg'
 // TODO: adjust these stats to reflect your real numbers
 const stats = [
   { value: '10+', label: 'Projects Built' },
