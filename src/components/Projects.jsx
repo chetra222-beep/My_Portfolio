@@ -30,7 +30,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <span className="eyebrow">My Work</span>
         <h2 className="section-heading mt-6">Recent Projects</h2>
-
+//======================================================
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           {projects.map((project) => (
             <div
@@ -51,12 +51,14 @@ export default function Projects() {
                   <span className="text-white/30 text-sm">Project image</span>
                 </div>
               )}
+//======================================================
 
               <div className="p-5 flex items-center justify-between">
                 <div>
                   <h3 className="font-semibold">{project.title}</h3>
                   <p className="text-xs text-white/50 mt-1">{project.tags}</p>
                 </div>
+//======================================================                
                 {project.link ? (
                   <a
                     href={project.link}
@@ -68,12 +70,15 @@ export default function Projects() {
                     <ArrowUpRight size={16} />
                   </a>
                 ) : (
+                  // as button for projects without a link, so that the layout doesn't shift
                   <button className="btn-icon group-hover:bg-accent group-hover:border-accent">
                     <ArrowUpRight size={16} />
                   </button>
                 )}
+//======================================================
               </div>
             </div>
+
           ))}
         </div>
       </div>
