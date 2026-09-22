@@ -1,18 +1,26 @@
 import { ArrowUpRight } from 'lucide-react'
+import groupPortfolioImg from '../assets/images/group-portfolio-ux.png'
 
-// TODO: replace with your real projects (e.g. AutoCar Rover, ESP32-CAM RC Car, Attendance System)
+// TODO: replace the remaining placeholder projects with your real work
+// (e.g. AutoCar Rover, ESP32-CAM RC Car, Attendance System)
 const projects = [
   {
-    title: 'Project Title One',
-    tags: 'Web Design, App Design',
+    title: 'Group 6 Portfolio (Figma)',
+    tags: 'UI/UX Design',
+    image: groupPortfolioImg,
+    link: 'https://www.figma.com/proto/YxWrSmtqUpH2CGU4zKYwaD/Project--Portfolio?node-id=3-29&t=61Ir473mXBNs3vRE-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A29',
   },
   {
     title: 'Project Title Two',
     tags: 'Network, System Admin',
+    image: null,
+    link: null,
   },
   {
     title: 'Project Title Three',
-    tags: 'UI/UX, Video Editing',
+    tags: 'Web Design, App Design',
+    image: null,
+    link: null,
   },
 ]
 
@@ -29,19 +37,41 @@ export default function Projects() {
               key={project.title}
               className="bg-night-800 border border-white/10 rounded-2xl overflow-hidden group"
             >
-              {/* TODO: replace with a real screenshot/image for this project */}
-              <div className="aspect-video bg-night-700 flex items-center justify-center">
-                <span className="text-white/30 text-sm">Project image</span>
-              </div>
+              {project.image ? (
+                <div className="aspect-video bg-night-700 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              ) : (
+                // TODO: replace with a real screenshot/image for this project
+                <div className="aspect-video bg-night-700 flex items-center justify-center">
+                  <span className="text-white/30 text-sm">Project image</span>
+                </div>
+              )}
 
               <div className="p-5 flex items-center justify-between">
                 <div>
                   <h3 className="font-semibold">{project.title}</h3>
                   <p className="text-xs text-white/50 mt-1">{project.tags}</p>
                 </div>
-                <button className="btn-icon group-hover:bg-accent group-hover:border-accent">
-                  <ArrowUpRight size={16} />
-                </button>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-icon group-hover:bg-accent group-hover:border-accent"
+                    aria-label={`Open ${project.title}`}
+                  >
+                    <ArrowUpRight size={16} />
+                  </a>
+                ) : (
+                  <button className="btn-icon group-hover:bg-accent group-hover:border-accent">
+                    <ArrowUpRight size={16} />
+                  </button>
+                )}
               </div>
             </div>
           ))}
